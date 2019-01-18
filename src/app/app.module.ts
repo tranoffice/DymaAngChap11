@@ -9,6 +9,11 @@ import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/
 import { HeaderComponent } from './header/header.component';
 import { CocktailContainerComponent } from './cocktail-container/cocktail-container.component';
 import { ActiveDirective } from './shared/directives/active.directive';
+import { PanierComponent } from './panier/panier.component';
+import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
+
+import { AppRouting } from './app.routing';
+import { PanierService } from './shared/services/panier.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +22,19 @@ import { ActiveDirective } from './shared/directives/active.directive';
     CocktailDetailsComponent,
     HeaderComponent,
     CocktailContainerComponent,
-    ActiveDirective
+    ActiveDirective,
+    PanierComponent,
+    IngredientsListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRouting,
   ],
-  providers: [],
+  providers: [
+    PanierService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
